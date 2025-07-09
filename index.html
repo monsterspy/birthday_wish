@@ -5,18 +5,17 @@
   <title>Happy Birthday Twarita 🎉</title>
   <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand&display=swap" rel="stylesheet">
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
       padding: 0;
       background: linear-gradient(to right, #ffe4ec, #f3f0ff);
       font-family: 'Quicksand', sans-serif;
       color: #4d2c3d;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-      overflow-x: hidden;
+      overflow: hidden;
     }
 
     .card {
@@ -25,6 +24,9 @@
       border-radius: 20px;
       padding: 30px;
       max-width: 500px;
+      margin: 100px auto;
+      position: relative;
+      z-index: 10;
       box-shadow: 0 10px 20px rgba(0,0,0,0.1);
       animation: fadeIn 2s ease-in-out;
     }
@@ -60,20 +62,54 @@
       padding: 0 10px;
     }
 
-    @keyframes fadeIn {
-      from {opacity: 0; transform: translateY(20px);}
-      to {opacity: 1; transform: translateY(0);}
-    }
-
     .footer {
       margin-top: 30px;
       font-size: 0.9rem;
       color: #7c6e86;
     }
+
+    @keyframes fadeIn {
+      from {opacity: 0; transform: translateY(20px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+
+    .floating {
+      position: absolute;
+      width: 60px;
+      height: 60px;
+      pointer-events: none;
+      z-index: 1;
+      animation: float 20s linear infinite;
+    }
+
+    @keyframes float {
+      0% {
+        transform: translateY(100vh) translateX(0);
+        opacity: 0;
+      }
+      10% { opacity: 1; }
+      50% {
+        transform: translateY(50vh) translateX(20vw) rotate(30deg);
+      }
+      100% {
+        transform: translateY(-10vh) translateX(100vw) rotate(360deg);
+        opacity: 0;
+      }
+    }
   </style>
 </head>
 <body>
 
+  <!-- Floating Bubu Dudu GIFs -->
+  <img src="https://media.tenor.com/m_PmpJJSs84AAAAm/bubu-cute-dancing.webp" class="floating" style="top: 10%; left: 5%; animation-delay: 0s;" />
+  <img src="https://media.tenor.com/G7vfbumehEIAAAAm/bubu-bubu-dudu.webp" class="floating" style="top: 30%; left: 15%; animation-delay: 3s;" />
+  <img src="https://media.tenor.com/EKUNdZ53C7UAAAAm/tonibear-bear.webp" class="floating" style="top: 50%; left: 25%; animation-delay: 6s;" />
+  <img src="https://media.tenor.com/d055Un-FXWgAAAAm/bubu-dudu.webp" class="floating" style="top: 70%; left: 35%; animation-delay: 9s;" />
+  <img src="https://media.tenor.com/sR8gTpwvs2UAAAAm/bubu-dudu-sseeyall.webp" class="floating" style="top: 20%; left: 60%; animation-delay: 2s;" />
+  <img src="https://media.tenor.com/fM-9hmdbN9UAAAAm/bubu-dudu-dudu-bubu.webp" class="floating" style="top: 40%; left: 80%; animation-delay: 5s;" />
+  <img src="https://media.tenor.com/LVpDxEGxRZcAAAAm/tkthao219-bubududu.webp" class="floating" style="top: 60%; left: 70%; animation-delay: 8s;" />
+
+  <!-- Main Birthday Card -->
   <div class="card">
     <div class="title">🎂 Happy Birthday Twarita! 🎂</div>
     <div class="subtitle">Wishing you a day full of love, laughter, and Bubu Dudu hugs 🐻💖</div>
